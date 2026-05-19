@@ -143,6 +143,7 @@ namespace sackMAN
 
             if (game == "BCUS98245" || game == "BCES00850" || game == "BCES01086" || game == "BCJS30058" || game == "BCAS20113" || game == "BCKS10150")
             {
+                gameName = "LBP2";
                 func.api.Notify("sackMAN connected!");
                 LBP2VersionForm formVersion = new LBP2VersionForm();
                 formVersion.ShowDialog();
@@ -163,19 +164,19 @@ namespace sackMAN
                             break;
                         }
                 }
-                gameName = "LBP2";
             }
             else if (game == "NPUA80662" || game == "NPEA00324" || game == "BCUS98372" || game == "BCES01693" || game == "BCES01694" || game == "NPEA00437")
             {
+                gameName = "LBP2";
                 Hide();
                 func.api.Notify("sackMAN connected!");
                 MessageBox.Show("You're on a release of the game that does not support v1.00. This will default to thinking the game is on latest patch. Be sure that you are on latest!");
                 LBP2Form lbp2 = new LBP2Form(new lbp2(func.api));
-                gameName = "LBP2";
                 lbp2.ShowDialog();
             }
             else if (game == "BCES00141" || game == "BCUS98148" || game == "BCAS20058" || game == "BCJS30018" || game == "BCUS98208" || game == "BCAS20078")
             {
+                gameName = "LBP1";
                 func.api.Notify("sackMAN connected!");
                 LBP1VersionForm formVersion = new LBP1VersionForm();
                 formVersion.ShowDialog();
@@ -196,7 +197,6 @@ namespace sackMAN
                             break;
                         }
                 }
-                gameName = "LBP1";
             }
             else if (game == "NPEA00241" || game == "NPUA80472" || game == "NPJA00052" || game == "NPHA80092" || game == "BCES00611")
             {
