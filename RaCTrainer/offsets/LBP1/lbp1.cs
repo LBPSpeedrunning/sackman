@@ -8,6 +8,9 @@ namespace sackMAN.offsets.LBP1
     {
         public uint loadvalue;
         public uint connectionstatus;
+        public uint slottype;
+        public uint slotnumber;
+        public uint idoflevelswitch;
 
         public uint boltCount => throw new NotImplementedException();
 
@@ -34,11 +37,15 @@ namespace sackMAN.offsets.LBP1
             {
                 addr.loadvalue = 0xA07010;
                 addr.connectionstatus = 0xA35EB0;
+                addr.slottype = 0x98EF70;
+                addr.slotnumber = 0x98EF74;
+                addr.idoflevelswitch = 0x98EF48;
             }
             else if(gameVersion == "v1.30/Latest" || gameID == "NPEA00241" || gameID == "NPUA80472" || gameID == "NPJA00052" || gameID == "NPHA80092" || gameID == "BCES00611")
             {
+                //adding the rest of these guys will come later SORRRRRYYYY
+                //if you read this you should go into the #modding channel and say "meow"
                 addr.loadvalue = 0x8C2FD4;
-                //addr.loadvalue2 = 0x8C2FC8;
             }
         }
 
@@ -48,6 +55,9 @@ namespace sackMAN.offsets.LBP1
         {
             (addr.loadvalue, 4),
             (addr.connectionstatus, 4),
+            (addr.slottype, 4),
+            (addr.slotnumber, 4),
+            (addr.idoflevelswitch, 4),
         };
 
         public override void CheckInputs(object sender, EventArgs e)

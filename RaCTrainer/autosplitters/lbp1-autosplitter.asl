@@ -1,7 +1,7 @@
 state("sackMAN") {}
 
 startup
-{    
+{
 
 }
 
@@ -15,6 +15,9 @@ init
 
     current.loadvalue = vars.reader.ReadUInt32();
 	current.connectionstatus = vars.reader.ReadUInt32();
+	current.slottype = vars.reader.ReadUInt32();
+	current.slotnumber = vars.reader.ReadUInt32();
+	current.idoflevelswitch = vars.reader.ReadUInt32();
 
 }
 
@@ -24,6 +27,9 @@ update
 
     current.loadvalue = vars.reader.ReadUInt32();
 	current.connectionstatus = vars.reader.ReadUInt32();
+	current.slottype = vars.reader.ReadUInt32();
+	current.slotnumber = vars.reader.ReadUInt32();
+	current.idoflevelswitch = vars.reader.ReadUInt32();
 
 }
 
@@ -39,11 +45,28 @@ reset
 
 split
 {
-  
+	if ((old.slottype == 0 || old.slottype == 2) && old.idoflevelswitch == 0 && current.idoflevelswitch == 10169)
+	{
+		return true;
+	}
 }
 
 isLoading 
 {
-    
-    return (current.loadvalue > 0) || (current.connectionstatus = 9);
+    if (current.slottype == 0 && (current.loadvalue > 0))
+	{
+		return false;
+	}
+	else if (current.loadvalue > 0)
+	{
+		return true;
+	}
+	else if (current.connectionstatus == 9)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
