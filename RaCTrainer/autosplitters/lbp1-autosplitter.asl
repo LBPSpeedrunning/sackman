@@ -13,7 +13,8 @@ init
     
     vars.reader.BaseStream.Position = 0;
 
-    current.LV1 = vars.reader.ReadUInt32();
+    current.loadvalue = vars.reader.ReadUInt32();
+	current.connectionstatus = vars.reader.ReadUInt32();
 
 }
 
@@ -21,7 +22,8 @@ update
 {
     vars.reader.BaseStream.Position = 0;
 
-    current.LV1 = vars.reader.ReadUInt32();
+    current.loadvalue = vars.reader.ReadUInt32();
+	current.connectionstatus = vars.reader.ReadUInt32();
 
 }
 
@@ -43,5 +45,5 @@ split
 isLoading 
 {
     
-    return (current.LV1 > 0);
+    return (current.loadvalue > 0) || (current.connectionstatus = 9);
 }
