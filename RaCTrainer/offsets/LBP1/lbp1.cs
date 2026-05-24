@@ -11,6 +11,8 @@ namespace sackMAN.offsets.LBP1
         public uint slottype;
         public uint slotnumber;
         public uint idoflevelswitch;
+        public uint numofsacksspawned;
+        public uint scoreboardhit;
 
         public uint boltCount => throw new NotImplementedException();
 
@@ -40,6 +42,8 @@ namespace sackMAN.offsets.LBP1
                 addr.slottype = 0x98EF70;
                 addr.slotnumber = 0x98EF74;
                 addr.idoflevelswitch = 0x98EF48;
+                addr.numofsacksspawned = 0xA7AF08;
+                addr.scoreboardhit = 0x9E064C;
             }
             else if(gameVersion == "v1.30/Latest" || gameID == "NPEA00241" || gameID == "NPUA80472" || gameID == "NPJA00052" || gameID == "NPHA80092" || gameID == "BCES00611")
             {
@@ -58,6 +62,8 @@ namespace sackMAN.offsets.LBP1
             (addr.slottype, 4),
             (addr.slotnumber, 4),
             (addr.idoflevelswitch, 4),
+            (addr.numofsacksspawned, 4),
+            (addr.scoreboardhit, 4),
         };
 
         public override void CheckInputs(object sender, EventArgs e)

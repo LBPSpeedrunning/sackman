@@ -260,7 +260,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="autosplitters\lbp1-autosplitter.asl" />
-    <None Include="autosplitters\lbp2-autosplitter-lv2.asl" />
     <None Include="autosplitters\lbp2-autosplitter.asl" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

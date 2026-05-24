@@ -9,6 +9,11 @@ namespace sackMAN.offsets.LBP2
         public uint loadvalue1;
         public uint loadvalue2;
         public uint loadvalue3;
+        public uint slotnumber;
+        public uint idselectedonplanet;
+        public uint idoflevelswitch;
+        public uint numofsacksspawned;
+        public uint scoreboardhit;
 
         public uint boltCount => throw new NotImplementedException();
 
@@ -33,6 +38,7 @@ namespace sackMAN.offsets.LBP2
             string gameID = AttachPS3Form.game;
             if (gameVersion == "v1.00/Unpatched")
             {
+                // getting removed next update to be v1.01 instead ENJOY IT WHILE IT LASTS
                 addr.loadvalue1 = 0xC8DDB8;
                 addr.loadvalue2 = 0xD05658;
                 // 0xD05668 for loadvalue2 also works too
@@ -47,6 +53,11 @@ namespace sackMAN.offsets.LBP2
                 // 0xE3F6B8 for loadvalue2 also works too
                 // 0xE326AC is game freeze value
                 addr.loadvalue3 = 0xE430B8;
+                addr.slotnumber = 0xDF761C;
+                addr.idselectedonplanet = 0xDF66DC;
+                addr.idoflevelswitch = 0xE4BA60;
+                addr.numofsacksspawned = 0xE9BD98;
+                addr.scoreboardhit = 0xE1C5B8;
             }
         }
 
@@ -57,6 +68,11 @@ namespace sackMAN.offsets.LBP2
             (addr.loadvalue1, 4),
             (addr.loadvalue2, 4),
             (addr.loadvalue3, 4),
+            (addr.slotnumber, 4),
+            (addr.idselectedonplanet, 4),
+            (addr.idoflevelswitch, 4),
+            (addr.numofsacksspawned, 4),
+            (addr.scoreboardhit, 4),
         };
 
         public override void CheckInputs(object sender, EventArgs e)
