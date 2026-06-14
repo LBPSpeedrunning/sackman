@@ -20,9 +20,9 @@ startup
 
 init
 {
-    var mmf = MemoryMappedFile.OpenExisting("sackman-autosplitter");
-    var stream = mmf.CreateViewStream();
-    vars.reader = new BinaryReader(stream);
+    System.IO.MemoryMappedFiles.MemoryMappedFile mmf = System.IO.MemoryMappedFiles.MemoryMappedFile.OpenExisting("sackman-autosplitter");
+    System.IO.MemoryMappedFiles.MemoryMappedViewStream stream = mmf.CreateViewStream();
+    vars.reader = new System.IO.BinaryReader(stream);
 
     vars.reader.BaseStream.Position = 0;
 
