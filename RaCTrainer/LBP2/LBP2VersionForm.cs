@@ -36,7 +36,7 @@ namespace sackMAN
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "v1.33/Latest",
-            "v1.00/Unpatched"});
+            "v1.01"});
             this.comboBox1.Location = new System.Drawing.Point(12, 81);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(229, 21);

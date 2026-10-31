@@ -7,6 +7,7 @@ namespace sackMAN.LBP1
     public partial class LBP1Form : Form
     {
         static ModLoaderForm modLoaderForm;
+        public Form InputDisplay;
         public lbp1 game;
         private AutosplitterHelper autosplitterHelper;
         public LBP1Form(lbp1 game)
@@ -14,6 +15,11 @@ namespace sackMAN.LBP1
             this.game = game;
             
             InitializeComponent();
+
+            if (this.game.HasInputDisplay)
+            {
+                this.game.SetupInputDisplayMemorySubs();
+            }
         }
 
         private void LBP1Form_FormClosed(object sender, FormClosedEventArgs e)
@@ -65,6 +71,21 @@ namespace sackMAN.LBP1
             FormClosed -= LBP1Form_FormClosed;
             Program.AttachPS3Form.Show();
             Close();
+        }
+
+        private void inputDisplayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (InputDisplay == null)
+            {
+                InputDisplay = new InputDisplay();
+                InputDisplay.FormClosed += InputDisplay_FormClosed;
+                InputDisplay.Show();
+            }
+        }
+
+        private void InputDisplay_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            InputDisplay = null;
         }
     }
 

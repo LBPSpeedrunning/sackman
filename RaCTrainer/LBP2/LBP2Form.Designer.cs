@@ -35,6 +35,7 @@
             this.switchGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.memoryViewerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.patchLoaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inputDisplayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +66,8 @@
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.switchGameToolStripMenuItem,
             this.memoryViewerToolStripMenuItem,
-            this.patchLoaderToolStripMenuItem});
+            this.patchLoaderToolStripMenuItem,
+            this.inputDisplayToolStripMenuItem});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -93,6 +95,13 @@
             this.patchLoaderToolStripMenuItem.Text = "Patch Loader";
             this.patchLoaderToolStripMenuItem.Click += new System.EventHandler(this.patchLoaderToolStripMenuItem_Click);
             // 
+            // inputDisplayToolStripMenuItem
+            // 
+            this.inputDisplayToolStripMenuItem.Name = "inputDisplayToolStripMenuItem";
+            this.inputDisplayToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inputDisplayToolStripMenuItem.Text = "Input Display";
+            this.inputDisplayToolStripMenuItem.Click += new System.EventHandler(this.inputDisplayToolStripMenuItem_Click);
+            // 
             // LBP2Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,5 +128,6 @@
         private System.Windows.Forms.ToolStripMenuItem switchGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem memoryViewerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem patchLoaderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inputDisplayToolStripMenuItem;
     }
 }

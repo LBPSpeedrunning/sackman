@@ -32,9 +32,10 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.switchGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.switchGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inputDisplayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,12 +66,20 @@
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.switchGameToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.toolStripMenuItem2});
+            this.toolStripMenuItem2,
+            this.inputDisplayToolStripMenuItem});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(51, 22);
             this.toolStripDropDownButton1.Text = "Menu";
+            // 
+            // switchGameToolStripMenuItem
+            // 
+            this.switchGameToolStripMenuItem.Name = "switchGameToolStripMenuItem";
+            this.switchGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.switchGameToolStripMenuItem.Text = "Switch Game";
+            this.switchGameToolStripMenuItem.Click += new System.EventHandler(this.switchGameToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -86,12 +95,12 @@
             this.toolStripMenuItem2.Text = "Patch Loader";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
-            // switchGameToolStripMenuItem
+            // inputDisplayToolStripMenuItem
             // 
-            this.switchGameToolStripMenuItem.Name = "switchGameToolStripMenuItem";
-            this.switchGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.switchGameToolStripMenuItem.Text = "Switch Game";
-            this.switchGameToolStripMenuItem.Click += new System.EventHandler(this.switchGameToolStripMenuItem_Click);
+            this.inputDisplayToolStripMenuItem.Name = "inputDisplayToolStripMenuItem";
+            this.inputDisplayToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inputDisplayToolStripMenuItem.Text = "Input Display";
+            this.inputDisplayToolStripMenuItem.Click += new System.EventHandler(this.inputDisplayToolStripMenuItem_Click);
             // 
             // LBP1Form
             // 
@@ -119,5 +128,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem switchGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inputDisplayToolStripMenuItem;
     }
 }

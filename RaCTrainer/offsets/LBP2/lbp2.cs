@@ -23,6 +23,10 @@ namespace sackMAN.offsets.LBP2
 
         public uint analogOffset => throw new NotImplementedException();
 
+        public uint LBP2inputOffset;
+
+        public uint LBP2analogOffset;
+
         public uint loadPlanet => throw new NotImplementedException();
 
         public uint currentPlanet => throw new NotImplementedException();
@@ -36,9 +40,11 @@ namespace sackMAN.offsets.LBP2
         {
             string gameVersion = LBP2VersionForm.LBP2VersionType;
             string gameID = AttachPS3Form.game;
-            if (gameVersion == "v1.00/Unpatched")
+            if (gameVersion == "v1.01")
             {
                 // getting removed next update to be v1.01 instead ENJOY IT WHILE IT LASTS
+                // i actually fucking lied because im a lazy piece of shit and lbp1 stuff was more important AS ALWAYS! WHATEVER!
+                // actually get shit done when you say you wanna get it done
                 addr.loadvalue1 = 0xC8DDB8;
                 addr.loadvalue2 = 0xD05658;
                 // 0xD05668 for loadvalue2 also works too
@@ -58,8 +64,12 @@ namespace sackMAN.offsets.LBP2
                 addr.idoflevelswitch = 0xE4BA60;
                 addr.numofsacksspawned = 0xE9BD98;
                 addr.scoreboardhit = 0xE1C5B8;
+                addr.LBP2inputOffset = 0xE4D464;
+                addr.LBP2analogOffset = 0xE4D469;
             }
         }
+
+        public bool HasInputDisplay => addr.LBP2inputOffset > 0 && addr.LBP2analogOffset > 0;
 
         public static LBP2Addresses addr = new LBP2Addresses();
 
@@ -74,6 +84,34 @@ namespace sackMAN.offsets.LBP2
             (addr.numofsacksspawned, 4),
             (addr.scoreboardhit, 4),
         };
+
+        protected override void SetupInputDisplayMemorySubsButtons()
+        {
+            int buttonMaskSubID = api.SubMemory(pid, addr.LBP2inputOffset, 4, (value) =>
+            {
+                Inputs.RawInputs = BitConverter.ToInt32(value, 0);
+                Inputs.Mask = Inputs.DecodeMask(Inputs.RawInputs);
+            });
+        }
+        public float ConvertStickFormat(byte value)
+        {
+            return (value - 128) / 127.0f;
+        }
+
+        protected override void SetupInputDisplayMemorySubsAnalogs()
+        {
+            int analogRSubID = api.SubMemory(pid, addr.LBP2analogOffset, 4, (value) =>
+            {
+                Inputs.ry = ConvertStickFormat(value[1]);
+                Inputs.rx = ConvertStickFormat(value[3]);
+            });
+
+            int analogYSubID = api.SubMemory(pid, addr.LBP2analogOffset + 4, 4, (value) =>
+            {
+                Inputs.ly = ConvertStickFormat(value[1]);
+                Inputs.lx = ConvertStickFormat(value[3]);
+            });
+        }
 
         public override void CheckInputs(object sender, EventArgs e)
         {

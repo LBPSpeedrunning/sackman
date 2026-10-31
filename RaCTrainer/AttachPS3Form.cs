@@ -1,8 +1,10 @@
 ﻿using sackMAN.LBP1;
 using sackMAN.LBP2;
+using sackMAN.SPM;
 using sackMAN.Memory;
 using sackMAN.offsets.LBP1;
 using sackMAN.offsets.LBP2;
+using sackMAN.offsets.SPM;
 using System;
 using System.IO;
 using System.Reflection;
@@ -157,7 +159,7 @@ namespace sackMAN
                             lbp2.ShowDialog();
                             break;
                         }
-                    case "v1.00/Unpatched":
+                    case "v1.01":
                         {
                             LBP2Form lbp2 = new LBP2Form(new lbp2(func.api));
                             lbp2.ShowDialog();
@@ -170,7 +172,7 @@ namespace sackMAN
                 gameName = "LBP2";
                 Hide();
                 func.api.Notify("sackMAN connected!");
-                MessageBox.Show("You're on a release of the game that does not support v1.00. This will default to thinking the game is on latest patch. Be sure that you are on latest!");
+                MessageBox.Show("You're on a release of the game that does not support v1.01. This will default to thinking the game is on latest patch. Be sure that you are on latest!");
                 LBP2Form lbp2 = new LBP2Form(new lbp2(func.api));
                 lbp2.ShowDialog();
             }
@@ -200,12 +202,20 @@ namespace sackMAN
             }
             else if (game == "NPEA00241" || game == "NPUA80472" || game == "NPJA00052" || game == "NPHA80092" || game == "BCES00611")
             {
+                gameName = "LBP1";
                 Hide();
                 func.api.Notify("sackMAN connected!");
-                MessageBox.Show("You're on a release of the game that does not support v1.21. This will default to thinking the game is on latest patch. Be sure that you are on latest!");
+                MessageBox.Show("You're on a release of the game that does not support the older versions. This will default to thinking the game is on latest patch. Be sure that you are on latest!");
                 LBP1Form lbp1 = new LBP1Form(new lbp1(func.api));
-                gameName = "LBP1";
                 lbp1.ShowDialog();
+            }
+            else if (game == "NPEA00243" || game == "NPUA80479" || game == "NPJA00058" || game == "NPHA80093")
+            {
+                gameName = "SPM";
+                Hide();
+                func.api.Notify("sackMAN connected!");
+                SPMForm spm = new SPMForm(new spm(func.api));
+                spm.ShowDialog();
             }
             else
             {

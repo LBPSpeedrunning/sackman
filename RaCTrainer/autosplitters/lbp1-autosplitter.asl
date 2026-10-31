@@ -74,11 +74,11 @@ split
             return true;
 
     if (settings["autoendcollector"])
-        if (current.slotnumber == 48456 && old.scoreboardhit == 0 && current.scoreboardhit == 4)
+        if (current.slotnumber == 48456 && old.scoreboardhit == 0 && (current.scoreboardhit == 1 || current.scoreboardhit == 4))
             return true;
 
     if (settings["autoendIL"])
-        if (current.slotnumber != 0 && old.scoreboardhit == 0 && current.scoreboardhit == 4)
+        if (current.slotnumber != 0 && old.scoreboardhit == 0 && (current.scoreboardhit == 1 || current.scoreboardhit == 4))
             return true;
 }
 

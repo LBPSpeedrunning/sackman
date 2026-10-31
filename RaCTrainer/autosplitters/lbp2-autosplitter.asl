@@ -98,7 +98,7 @@ split
 	
 	if (settings["autoendfinalboss"])
 	{
-		if (current.idselectedonplanet == 152889 && old.scoreboardhit == 0 && current.scoreboardhit == 4)
+		if (current.idselectedonplanet == 152889 && old.scoreboardhit == 0 && (current.scoreboardhit == 1 || current.scoreboardhit == 4))
 		{
 			return true;
 		}
@@ -114,7 +114,7 @@ split
 	
 	if (settings["autoendIL"])
 	{
-		if (old.scoreboardhit == 0 && current.scoreboardhit == 4)
+		if (old.scoreboardhit == 0 && (current.scoreboardhit == 1 || current.scoreboardhit == 4))
 		{
 			return true;
 		}

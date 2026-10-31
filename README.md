@@ -2,14 +2,16 @@
 
 sackMAN is a program that interfaces with the LittleBigPlanet PS3 games, primarily targetted towards speedrunners.
 
-For more information about game patches, Lua automations, and other details, please refer to the [RaCMAN Wiki](https://github.com/MichaelRelaxen/racman/wiki).
+For more information about game patches, Lua automations, and other details, please refer to the [OPENMAN Wiki](https://github.com/MichaelRelaxen/OPENMAN/wiki).
 
 ## Supported Games
 - LittleBigPlanet - (Game Versions v1.21 and v1.30/Latest)
 - LittleBigPlanet 2 - (Game Versions v1.00 and v1.33/Latest)
+- Sackboy's Prehistoric Moves
 
 ## Supported Features
 - Autosplitter/Load Remover with LiveSplit
+- Input Display for Controller 1
 - Memory Viewer
 - Patch Loader
 
@@ -33,4 +35,4 @@ Just run `sackMAN.exe`, then while your game is open in RPCS3, click the `RPCS3`
 Some features such as patch loading, or other features that may edit the game's code are unfortunately not supported on RPCS3.
 
 ## Acknowledgements
-Special thanks to all those who have worked on the original [RaCMAN project](https://github.com/MichaelRelaxen/racman) and the [Ratchetron API](https://github.com/bordplate/Ratchetron). This would not be a thing without the work of all that.
+Special thanks to all those who have worked on the original [OPENMAN project](https://github.com/MichaelRelaxen/OPENMAN) and the [Ratchetron API](https://github.com/bordplate/Ratchetron). This would not be a thing without the work of all that.
