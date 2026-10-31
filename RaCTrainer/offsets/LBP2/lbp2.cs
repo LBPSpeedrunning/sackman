@@ -40,9 +40,11 @@ namespace sackMAN.offsets.LBP2
         {
             string gameVersion = LBP2VersionForm.LBP2VersionType;
             string gameID = AttachPS3Form.game;
-            if (gameVersion == "v1.00/Unpatched")
+            if (gameVersion == "v1.01")
             {
                 // getting removed next update to be v1.01 instead ENJOY IT WHILE IT LASTS
+                // i actually fucking lied because im a lazy piece of shit and lbp1 stuff was more important AS ALWAYS! WHATEVER!
+                // actually get shit done when you say you wanna get it done
                 addr.loadvalue1 = 0xC8DDB8;
                 addr.loadvalue2 = 0xD05658;
                 // 0xD05668 for loadvalue2 also works too

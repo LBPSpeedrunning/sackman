@@ -54,9 +54,15 @@ namespace sackMAN.offsets.LBP1
             }
             else if(gameVersion == "v1.30/Latest" || gameID == "NPEA00241" || gameID == "NPUA80472" || gameID == "NPJA00052" || gameID == "NPHA80092" || gameID == "BCES00611")
             {
-                //adding the rest of these guys will come later SORRRRRYYYY
-                //if you read this you should go into the #modding channel and say "meow"
                 addr.loadvalue = 0x8C2FD4;
+                addr.connectionstatus = 0x90D048;
+                addr.slottype = 0x88C868;
+                addr.slotnumber = 0x88C86C;
+                addr.idoflevelswitch = 0x88C84C;
+                addr.numofsacksspawned = 0x969B58;
+                addr.scoreboardhit = 0x8C3A58;
+                addr.LBP1inputOffset = 0x91F444;
+                addr.LBP1analogOffset = 0x91F449;
             }
         }
 

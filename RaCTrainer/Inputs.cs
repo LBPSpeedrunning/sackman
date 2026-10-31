@@ -110,7 +110,7 @@ namespace sackMAN
             /// </summary>
             public static List<Buttons> GetButtons(uint mask)
             {
-                Type enumType = (gameName == "LBP1" || gameName == "LBP2")  ? typeof(FutureBtns) : typeof(OgBtns);
+                Type enumType = (gameName == "LBP1" || gameName == "LBP2" || gameName == "SPM")  ? typeof(FutureBtns) : typeof(OgBtns);
                 var list = new List<Buttons>();
 
                 foreach (var button in Enum.GetValues(enumType))
